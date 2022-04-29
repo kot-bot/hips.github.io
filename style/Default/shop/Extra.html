@@ -1,0 +1,140 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+
+<div class="btn-group" style="float:right;">
+	<a href="<?=BASE_URL;?>go/shop/settings" class="btn btn-mini"><i class="icon-wrench"></i> Настройки</a>
+	<?=self::BtnHead()?>
+</div>
+<div style="display:none;">McrShop © Qexy.org</div>Web-Магазин - Дополнительные настройки:</div>
+<div class="block-line"><?=$info?></div>
+
+<form action="<?=BASE_URL?>go/shop/extra" name="adminform" method="post">
+
+	<label><h3>Сортировка</h3></label>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Порядок сортировки предметов</span>
+		<select name="s_or_items">
+			<option value="0">Сначала старые</option>
+			<option value="1" <? if($cfgShop['s_or_items']===1) echo 'selected';?>>Сначала новые</option>
+		</select>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Сортировка предметов</span>
+		<select name="s_by_items">
+			<option value="id">По номеру</option>
+			<option value="title" <? if($cfgShop['s_by_items']=='title') echo 'selected';?>>По названию</option>
+			<option value="iid" <? if($cfgShop['s_by_items']=='iid') echo 'selected';?>>По id предмета</option>
+			<option value="price" <? if($cfgShop['s_by_items']=='price') echo 'selected';?>>По цене</option>
+			<option value="discount" <? if($cfgShop['s_by_items']=='discount') echo 'selected';?>>По скидке</option>
+		</select>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Результатов на странице предметов</span>
+		<input type="text" name="r_op_items" class="span6" value="<?=$cfgShop['r_op_items']?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Результатов на странице истории</span>
+		<input type="text" name="r_op_hstry" class="span6" value="<?=$cfgShop['r_op_hstry']?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Результатов на странице корзины</span>
+		<input type="text" name="r_op_cart" class="span6" value="<?=$cfgShop['r_op_cart']?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Результатов на странице оповещений</span>
+		<input type="text" name="r_op_prmlst" class="span6" value="<?=$cfgShop['r_op_prmlst']?>" required>
+	</div></p>
+
+	<label><h3>Интеркасса</h3></label>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Использовать Интеркассу</span>
+		<select name="use_intkas">
+			<option value="1">Да</option>
+			<option value="0" <? if($cfgShop['use_intkas']==0) echo 'selected';?>>Нет</option>
+		</select>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Секретный ключ</span>
+		<input type="text" name="secret_key" class="span6" value="<?=$cfgShop['secret_key']?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Идентификатор магазина</span>
+		<input type="text" name="shop_id" class="span6" value="<?=$cfgShop['shop_id']?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Множитель суммы <i class="icon-info-sign" title="Сумма на которую игрок пополнит свой счет умножается на это число"></i></span>
+		<input type="text" name="cur_multip" class="span6" value="<?=$cfgShop['cur_multip']?>" required>
+	</div></p>
+
+	<label><h3>Управление функциями</h3></label>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Использовать систему ваучеров</span>
+		<select name="use_vaucher">
+			<option value="0">Нет</option>
+			<option value="1" <? if($cfgShop['use_vaucher']==1) echo 'selected';?>>Да</option>
+		</select>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Использовать систему оповещений</span>
+		<select name="use_permlist">
+			<option value="0">Нет</option>
+			<option value="1" <? if($cfgShop['use_permlist']==1) echo 'selected';?>>Да</option>
+		</select>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Использовать систему подарков</span>
+		<select name="use_gift">
+			<option value="0">Нет</option>
+			<option value="1" <? if($cfgShop['use_gift']==1) echo 'selected';?>>Да</option>
+		</select>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Возможность покупки больше 64</span>
+		<select name="use_over64">
+			<option value="0">Нет</option>
+			<option value="1" <? if($cfgShop['use_over64']==1) echo 'selected';?>>Да</option>
+		</select>
+	</div></p>
+
+	<label><h3>Остальное</h3></label>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Игровая валюта</span>
+		<input type="text" name="currency" class="span6" value="<?=$cfgShop['currency']?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Реальная валюта</span>
+		<input type="text" name="currency2" class="span6" value="<?=$cfgShop['currency2']?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:300px;">Магазин закрыт(Технические работы)</span>
+		<select name="shop_close">
+			<option value="0">Нет</option>
+			<option value="1" <? if($cfgShop['shop_close']==1) echo 'selected';?>>Да</option>
+		</select>
+	</div></p>
+	
+	<p><div style="float: right;">
+		<input class="btn" name="submit" type="submit" value="Сохранить" />
+	</div></p>
+<!-- <?=self::buyid()?> -->
+</form>	
+	
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?=S_VERSION?> Premium © Qexy.org</div>

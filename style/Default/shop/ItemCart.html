@@ -1,0 +1,29 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?=BASE_URL?>go/shop/history" class="btn btn-mini"><i class="icon-shopping-cart"></i> История транзакций</a>
+	<?=self::BtnHead()?>
+</div>
+<!-- <?=self::buyid()?> -->
+Web-Магазин - Корзина (Баланс: <?=S_P_MONEY?> <?=$cfgShop['currency']?> | <?=S_P_MONEYR?> <?=$cfgShop['currency2']?>)</div>
+<div class="block-line">
+	<a href="#Modal_getItems" role="button" class="btn btn-mini" data-toggle="modal"><i class="icon-exclamation-sign"></i> Получить предметы в игре</a>
+</div>
+
+<!-- Modal -->
+<?include_once (S_STYLE.$cfgShop['style']."Modals/Modal_getItems.html");?>
+
+
+<table class="table table-striped">
+	<tr>
+		<td>ID Предмета</td>
+		<td>Название предмета</td>
+		<td>Кол-во предметов</td>
+	</tr>
+	<?=$ItemCartIDs?>
+</table>
+
+<?=self::PaginItems($cfgShop['tbl_cart'], $cfgShop['r_op_cart'], 'cart')?>
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?=S_VERSION?> Premium © Qexy.org</div>

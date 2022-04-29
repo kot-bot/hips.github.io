@@ -1,0 +1,33 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?echo BASE_URL;?>go/shop/c.add" class="btn btn-mini"><i class="icon-shopping-cart"></i> Корзина</a>
+	<?echo self::BtnHead();?>
+</div><div style="display:none;">McrShop © Qexy.org</div>
+<!-- <?echo self::buyid();?> -->
+Web-Магазин - Пополнение счета (Баланс: <?=S_P_MONEY?> <?=$cfgShop['currency']?> | <?=S_P_MONEYR?> <?=$cfgShop['currency2']?>)</div>
+<div class="block-line"></div>
+
+<p><?php echo $info; ?></p>
+	<center>
+		<p><form id="payment" name="payment" method="post" action="<?php echo $action; ?>" enctype="utf-8">
+			<input type="hidden" name="ik_co_id" value="<?php echo $cfgShop['shop_id']; ?>" />
+			<input type="hidden" name="ik_pm_no" value="<?php echo $did; ?>" />
+			<input type="hidden" name="ik_desc" value="Пополнение счета пользователя <?php echo $username; ?>" />
+			<input type="hidden" name="ik_cur" value="RUB" />
+			<div class="input-prepend">
+				<span class="add-on">Сумма</span>
+				<input type="text" name="ik_am" class="span6" value="<?php echo $amount; ?>" required placeholder="0.00" <?php echo $dis; ?>>
+			</div>
+       		<p><input type="submit" name="<?php echo $sName; ?>" class="btn" value="<?php echo $sValue; ?>"></p>
+		</form>
+		</p>
+	
+		<form name="deny" action="<?php echo BASE_URL.'go/shop/d.'.$did; ?>" method="post">
+			<?php echo $deny; ?>
+		</form>
+	</center>
+</div>
+
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?echo S_VERSION;?> Premium © Qexy.org</div>

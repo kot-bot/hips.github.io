@@ -1,0 +1,63 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?=BASE_URL;?>go/shop/k.all" class="btn btn-mini"><i class="icon-plus-sign"></i> Управление ваучерами</a>
+	<?self::BtnHead()?>
+</div><div style="display:none;">McrShop © Qexy.org</div>
+<!-- <?=self::buyid();?> -->
+<?=$btn;?> ваучер</div>
+<div class="block-line"><?=$info?></div>
+
+<form action="<?=BASE_URL;?>go/shop/<?=$idsid.$func?>" name="adminform" method="post">
+
+	<p><div class="input-prepend input-append">
+		<span class="add-on" style="width:140px;">Ключ:</span>
+		<input type="text" name="Key" style="width:226px;" id="getKey" required>
+		<span title="Обновить" class="add-on">
+			<a href="javascript://" onClick="sGetId('getKey', sGetVaucher(), 1)"><i class="icon-refresh"></i></a>
+			<i class="icon-info-sign" title="Ключ генерируется автоматически при обновлении страницы"></i>
+		</span>
+		
+	</div></p>
+	
+	<p><div class="input-prepend input-append">
+		<span class="add-on" style="width:140px;">Сумма:</span>
+		<input type="text" name="Sum" class="span7" value="<?=$sum?>" required>
+		<span class="add-on"><i class="icon-info-sign" title="Эту сумму игрок получит на свой счет после активации ключа."></i></span>
+	</div></p>
+	
+	<p><div class="input-prepend input-append">
+		<span class="add-on" style="width:140px;">Ссылка на покупку:</span>
+		<input type="text" name="Link" class="span7" value="<?=$link?>" required>
+		<span class="add-on"><i class="icon-info-sign" title="Ссылка на платежную систему, например oplata.info."></i></span>
+	</div></p>
+	
+	<p><div class="input-prepend input-append">
+		<span class="add-on" style="width:140px;">Валидность:</span>
+		
+		<input type="text" name="Valid" class="span7" value="<?=$valid?>" required>
+		
+		<span class="add-on">
+			<i class="icon-info-sign" title="0 - Ключ нельзя активировать. 1 - Ключ можно будет активировать. После активации сменится на 0."></i>
+		</span>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Валюта:</span>
+		<select name="real">
+			<option value="0"><?=$cfgShop['currency']?> (Игровая)</option>
+			<option value="1" <?=$real?>><?=$cfgShop['currency2']?> (Реальная)</option>
+		</select>
+	</div></p>
+	
+	<p><div style="float: right;">
+		<input class="btn" type="submit" value="<?=$btn?>" />
+	</div></p>
+
+</form>	
+	
+</div>
+
+<script>sGetId('getKey', sGetVaucher(), 1);</script>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?=S_VERSION?> Premium © Qexy.org</div>

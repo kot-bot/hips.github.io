@@ -1,0 +1,10 @@
+<div style="padding:10px 0 0 0;"><!-- <?echo self::buyid();?> -->
+	<form method="GET" action="<?echo BASE_URL;?>">
+		<div class="input-append">
+		<input type="hidden" name="mode" value="shop">
+		<select name="cid" class="span11" required><?echo $CatList;?></select>
+		
+		<input class="btn" type="submit" value="Перейти">
+		</div>
+	</form>
+</div><div style="display:none;">McrShop © Qexy.org</div>

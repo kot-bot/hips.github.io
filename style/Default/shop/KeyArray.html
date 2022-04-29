@@ -1,0 +1,25 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?echo BASE_URL;?>go/shop/k.add" class="btn btn-mini"><i class="icon-plus-sign"></i> Добавить ваучер</a>
+	<?echo self::BtnHead();?>
+</div>
+<!-- <?echo self::buyid();?> -->
+Web-Магазин - Управление ваучерами:</div>
+<div class="block-line"></div>
+
+<table class="table">
+<tr>
+	<td>Ключ</td>
+	<td>Сумма</td>
+	<td>Валидность</td>
+	<td>Пользователь</td>
+	<td>Ссылка</td>
+	<td>Действие</td>
+</tr>
+<? echo $KeyArray; ?>
+</table>
+
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?echo S_VERSION;?> Premium © Qexy.org</div>

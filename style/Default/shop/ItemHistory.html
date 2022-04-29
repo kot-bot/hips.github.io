@@ -1,0 +1,24 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?=BASE_URL?>go/shop/cart" class="btn btn-mini"><i class="icon-shopping-cart"></i> Корзина</a>
+	<?=self::BtnHead()?>
+</div>
+<!-- <?=self::buyid()?> -->
+Web-Магазин - История покупок (Баланс: <?=S_P_MONEY?> <?=$cfgShop['currency']?> | <?=S_P_MONEYR?> <?=$cfgShop['currency2']?>)</div>
+<div class="block-line"></div>
+
+<table class="table table-striped">
+	<tr>
+		<td>№ Транзакции</td>
+		<td>ID Предмета</td>
+		<td>Название предмета</td>
+		<td>Кол-во предметов</td>
+		<td>Сумма</td>
+	</tr>
+	<?=$ItemHistoryIDs?>
+</table>
+<?=self::PaginItems($cfgShop['tbl_hist'], $cfgShop['r_op_hstry'], 'history')?>
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?=S_VERSION?> Premium © Qexy.org</div>

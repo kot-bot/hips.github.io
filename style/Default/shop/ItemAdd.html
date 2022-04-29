@@ -1,0 +1,28 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div class="btn-group" style="float:right;">
+	<a href="<?echo BASE_URL;?>go/shop/c.all" class="btn btn-mini"><i class="icon-shopping-cart"></i> Управление категориями</a>
+	<?echo self::BtnHead();?>
+</div>
+<!-- <?echo self::buyid();?> -->
+Web-Магазин - <?echo $btn;?> предмет:</div>
+<div class="block-line"><?echo $info;?></div>
+<div style="display:none;">McrShop © Qexy.org</div>
+
+<ul id="myTab" class="nav nav-tabs">
+	<li class="active"><a href="#server" data-toggle="tab">Сервер</a></li>
+	<li><a href="#site" data-toggle="tab">Сайт</a></li>
+</ul>
+
+<div class="tab-content">
+	<div class="tab-pane fade in active" id="server">
+		<?include_once(S_STYLE.$cfgShop['style'].'ItemAdd_TabServer.html');?>
+	</div>
+	
+	<div class="tab-pane fade" id="site">
+		<?include_once(S_STYLE.$cfgShop['style'].'ItemAdd_TabSite.html');?>
+	</div>
+</div>
+
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?echo S_VERSION;?> Premium © Qexy.org</div>

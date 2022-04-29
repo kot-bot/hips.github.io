@@ -1,0 +1,14 @@
+<tr class="<?echo $valid;?>">
+	<td><?echo $key;?></td>
+	<td><?echo $sum;?></td>
+	<td><?echo $active;?></td>
+	<td><?echo $user;?></td>
+	<td><a href="<?echo $link;?>">Купить</a></td>
+	<td><!-- <?echo self::buyid();?> -->
+		<div class="btn-group">
+		<a class="btn" href="<?echo BASE_URL;?>go/shop/k.<?echo $id;?>/edt"><i class="icon-pencil"></i></a>
+		<a class="btn" href="<?echo BASE_URL;?>go/shop/k.<?echo $id;?>/del"><i class="icon-remove"></i></a>
+		</div>
+	</td>
+</tr>
+<div style="display:none;">McrShop © Qexy.org</div>

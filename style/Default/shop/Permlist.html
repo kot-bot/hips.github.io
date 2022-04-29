@@ -1,0 +1,26 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?=BASE_URL;?>go/shop/history" class="btn btn-mini"><i class="icon-shopping-cart"></i> История транзакций</a>
+	<?=self::BtnHead();?>
+</div>
+<!-- <?=self::buyid();?> -->
+Web-Магазин - Cписка привилегированных:</div>
+<div class="block-line"></div>
+
+<table class="table table-striped">
+	<tr>
+		<td>№ Транзакции</td>
+		<td>Пользователь</td>
+		<td>Дата покупки</td>
+		<td>Дата окончания</td>
+		<td>Привилегии</td>
+		<td>Действие</td>
+	</tr>
+	<?=$PermlistIDs;?>
+</table>
+
+<?=self::PaginItems($cfgShop['tbl_temp'], $cfgShop['r_op_prmlst'], 'permlist')?>
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?=S_VERSION;?> Premium © Qexy.org</div>

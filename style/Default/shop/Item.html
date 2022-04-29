@@ -1,0 +1,20 @@
+<center><div style="display:none;">McrShop © Qexy.org</div>
+	<div class="ItemTable">
+	<div class="Item">
+		<?echo $title;?>
+		
+		<div>
+			<img width="70px" height="80px" src="<?echo $img;?>" alt="Картинка">
+		</div>
+		
+		<div class="tooltip-demo">
+			<i data-toggle="tooltip" title="Цена указана за штуку">Цена: <?echo $price;?> <?echo $currency;?></i>
+		</div>
+		<p><div class="btn-group">
+			<a href="<?echo BASE_URL;?>go/shop/<?echo $id;?>" class="btn"><i class="icon-shopping-cart"></i></a>
+			<? echo self::BtnEdit($id); ?>
+		   </div>
+		</p>
+	</div>
+	</div>
+</center>

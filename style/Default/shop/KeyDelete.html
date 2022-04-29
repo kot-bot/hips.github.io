@@ -1,0 +1,27 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?echo BASE_URL;?>go/shop/k.all" class="btn btn-mini"><i class="icon-plus-sign"></i> Управление ваучерами</a>
+	<?echo self::BtnHead();?>
+</div>
+<!-- <?echo self::buyid();?> -->
+Удаление ваучера</div>
+<div class="block-line"><?echo $info;?></div>
+
+<form action="<?echo BASE_URL;?>go/shop/k.<?echo $kid;?>/del" name="adminform" method="post">
+
+	<p><div>
+		<div class="alert alert-error"><b>Внимание!</b> Ваучер "<?echo $key;?>" будет удален безвозвратно.</div>
+		<label class="checkbox"><input type="checkbox" name="KeyCheck" required> Я подтверждаю удаление ваучера.</label>
+	</div></p>
+	
+	<p><div style="float: right;">
+		<input class="btn" name="KeySubmit" type="submit" value="Удалить" />
+		<a class="btn" href="javascript:history.back();">Отмена</a>
+	</div></p>
+
+</form>	
+	
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?echo S_VERSION;?> Premium © Qexy.org</div>

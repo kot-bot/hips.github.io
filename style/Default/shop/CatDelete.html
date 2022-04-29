@@ -1,0 +1,27 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?echo BASE_URL;?>go/shop/c.add" class="btn btn-mini"><i class="icon-plus-sign"></i> Добавить категорию</a>
+	<?echo self::BtnHead();?>
+</div>
+
+Удаление категории</div>
+<div class="block-line"><?echo $info;?></div>
+
+<form action="<?echo BASE_URL;?>go/shop/c.<?echo $id;?>/del" name="adminform" method="post">
+
+	<p><div>
+		<div class="alert alert-error"><b>Внимание!</b> Удаление категории "<?echo $title;?>" повлечет за собой удаление всех предметов в этой категории.</div>
+		<label class="checkbox"><input type="checkbox" name="CatCheck" required> Я подтверждаю удаление категории.</label>
+	</div></p>
+	
+	<p><div style="float: right;">
+		<input class="btn" name="CatSubmit" type="submit" value="Удалить" />
+		<a class="btn" href="javascript:history.back();">Отмена</a>
+	</div></p>
+
+</form>	
+<!-- <?echo self::buyid();?> -->	
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?echo S_VERSION;?> Premium © Qexy.org</div>

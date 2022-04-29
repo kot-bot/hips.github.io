@@ -1,0 +1,92 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?echo BASE_URL;?>go/shop/cart" class="btn btn-mini"><i class="icon-shopping-cart"></i> Корзина</a>
+	<?echo self::BtnHead();?>
+</div>
+<!-- <?echo self::buyid();?> -->
+Web-Магазин (Баланс: <?=S_P_MONEY?> <?=$cfgShop['currency']?> | <?=S_P_MONEYR?> <?=$cfgShop['currency2']?>)</div>
+<div class="block-line"><?echo $info;?></div>
+
+		<center><h3><?echo $title;?></h3></center>
+		
+			<img src="<?echo $img;?>" style="float:left; padding:20px;">
+		
+			<p><b>ID предмета:</b> <?echo $iid;?></p>
+			<p><b><?echo $typename;?>:</b> <?echo $ctitle;?></p>
+			<p><b>Описание:</b> <?echo $desc;?></p><div style="display:none;">McrShop © Qexy.org</div>
+			<p><b>Осталось:</b> <?=$num?> шт.</p>
+			
+		<br clear="all">
+		
+		<p class="tooltip-demo">
+			<font color="#00AA00" size="4">Цена: <?echo $pricez;?> <?=$currency?></font> <i data-toggle="tooltip" class="icon-info-sign" title="Цена указана за штуку"></i>
+		</p>
+		
+		<p><form action="<?echo BASE_URL;?>go/shop/<?echo $id;?>" method="post">
+			<?	if(!$deactive){
+				if($cfgShop['use_over64']==1){ ?>
+
+			<div class="input-prepend" style="position:absolute; padding-left: 290px; margin-top:-10px;">
+				<span class="add-on" style="width:120px;">Нужно больше
+				<input type="checkbox" name="bignumcheck" id="bignumcheck" />:</span>
+				<input type="text" name="ItemNum2" id="bignum" class="span2" placeholder="0" onchange="getThisVal(this.value)" />
+			</div>
+			<?php } ?>
+			<p><div class="slider_price"><br>
+				<div id="slider-result"><?echo $Aval;?> шт. - цена: <?echo ($price-$disc)*$Aval;?></div>
+				<input id="hidden" type="hidden" name="ItemNum" value="<?echo $Aval;?>">
+			</div></p>
+		
+			<script type="text/javascript">
+			$(".slider_price").slider({
+				animate: true,
+				range: "min",
+				value: <?echo $Aval;?>,
+				min: 1,
+				max: <?echo $Amax;?>,
+				step: 1,
+				
+				//this gets a live reading of the value and prints it on the page
+				slide: function(event, ui)
+				{
+					$("#slider-result").html(ui.value + " шт. - цена: " + (ui.value*<?echo $price-$disc;?>).toFixed(2));
+				},
+
+				//this updates the hidden form field so we can submit the data using a form
+				change: function(event, ui)
+				{
+					$('#hidden').attr('value', ui.value);
+				}
+			});
+
+			function getThisVal(inputvalue)
+			{
+				var value = 'Цена: ' + (inputvalue * <?php echo $pricez; ?>).toFixed(2) + ' <?=$currency?>';
+				value = alert(value);
+				return value;
+			}
+			
+			
+			</script>
+			<?}else{?>
+				<p><input id="hidden" type="hidden" name="ItemNum" value="1"></p>
+			<?}?>
+			<br clear="all">
+			<?php if($cfgShop['use_gift']==1){ ?>
+		<p><div class="input-prepend">
+			<span class="add-on" style="width:120px;">Подарок игроку
+			<input type="checkbox" name="giftcheck" id="giftcheck" />:</span>
+			<input type="text" name="gift" id="gift" class="span11" placeholder="Ник игрока" />
+		</div></p>
+			<?php } ?>
+		<p class="tooltip-demo">
+			<div class="btn-group">
+				<button type="submit" class="btn"><b data-toggle="tooltip" title="<?echo $Isubmit;?>">Купить</b></button>
+				<? echo self::BtnEdit($id); ?>
+			</div>
+		</p>
+		</form></p>
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?echo S_VERSION;?> Premium © Qexy.org</div>

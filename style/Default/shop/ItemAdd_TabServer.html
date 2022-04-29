@@ -1,0 +1,67 @@
+<form action="<?echo BASE_URL;?>go/shop/<?echo $idsid.$func;?>" name="TabServer" method="post">
+	
+	<p align="center"><b>В этой вкладке вы можете добавить предметы связанные с сервером</b></p>
+	
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Название:</span>
+		<input type="text" name="ItemTitle" class="span11" value="<?echo $title;?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Изображение:</span>
+		<input type="text" name="ItemImg" class="span11" value="<?echo $img;?>" placeholder="http://mysite.ru/img.png">
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Категория <i class="icon-info-sign" style="cursor:pointer;" title="Категория, отображаемая на сайте. Определяемый плагином shopping cart."></i>:</span>
+		<select name="ItemCid" class="span11" required><?echo $CatList;?></select>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Предмет(ID) <i class="icon-info-sign" title="Этот предмет игрок получит в игре. Поддерживаются как id вида 2,4,13, так и 5:4,98:2, vip, admin(и т.п. для привилегий)."></i>:</span>
+		<input type="text" name="ItemIid" class="span4" value="<?echo $iid;?>" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Оповещение <i class="icon-info-sign" title="Этот пункт предназначен для привилегий. Укажите кол-во дней. Через это кол-во дней вы получите оповещение, чтобы вы могли снять привилегии с игрока"></i>:</span>
+		<input type="text" name="ItemDate" class="span4" value="<?echo $date;?>">
+	</div></p>
+	
+	<p><div class="input-prepend">
+	<span class="add-on" style="width:100px;">Описание:</span>
+	<textarea class="span12" style="height:100px" name="ItemDesc" placeholder="Описание предмета" required><?echo $desc;?></textarea>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Цена:</span>
+		<input type="text" name="ItemPrice" class="span11" value="<?echo $price;?>" placeholder="0.00" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Валюта:</span>
+		<select name="ItemReal">
+			<option value="0"><?=$cfgShop['currency']?> (Игровая)</option>
+			<option value="1" <?=$real?>><?=$cfgShop['currency2']?> (Реальная)</option>
+		</select>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Скидка:</span>
+		<input type="text" name="ItemDisc" class="span11" value="<?echo $disc;?>" placeholder="0.00">
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Кол-во товара <i class="icon-info-sign" title="Количество, доступное для покупки (должно быть больше нуля)"></i>:</span>
+		<input type="text" name="ItemNum" class="span4" value="<?echo $num;?>" placeholder="0" required>
+	</div></p>
+
+	<p><div class="input-prepend">
+		<span class="add-on" style="width:100px;">Особенности <i class="icon-info-sign" style="cursor:pointer;" title="NBT тэги и т.п."></i>:</span>
+		<input type="text" name="ItemExtra" class="span11" value="<?echo $extra;?>">
+	</div></p>
+	
+	<p><div style="float: right;">
+		<input class="btn" type="submit" name="SubmitServer" value="<?echo $btn;?>" />
+	</div></p>
+
+</form>

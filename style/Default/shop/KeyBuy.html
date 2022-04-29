@@ -1,0 +1,29 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+<div style="display:none;">McrShop © Qexy.org</div>
+<div class="btn-group" style="float:right;">
+	<a href="<?echo BASE_URL;?>go/shop/c.add" class="btn btn-mini"><i class="icon-shopping-cart"></i> Корзина</a>
+	<?echo self::BtnHead();?>
+</div><div style="display:none;">McrShop © Qexy.org</div>
+<!-- <?echo self::buyid();?> -->
+Web-Магазин - Пополнение счета (Баланс: <?=S_P_MONEY?> <?=$cfgShop['currency']?> | <?=S_P_MONEYR?> <?=$cfgShop['currency2']?>)</div>
+<div class="block-line"><?echo $info;?></div>
+
+<p>Чтобы пополнить ваш счет, выберите нужную сумму.</p>
+<p>Затем вы перейдете на страницу оплаты, где должны выбрать способ оплаты и оплатить товар.</p>
+<p>После оплаты, вы получите уникальный ключ, который должны ввести в форму ниже.</p>
+<center><?echo self::KeySums();?></center>
+
+<br>
+
+<form action="<?echo BASE_URL;?>go/shop/buy" name="adminform" method="post">
+
+	<center>Ввод ключа
+	<p><input type="text" name="Key" class="span6" required placeholder="Ключ активации"></p>
+	
+	<p><input class="btn" name="BtnCheck" type="submit" value="Активировать"></p></center>
+
+</form>	
+	
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?echo S_VERSION;?> Premium © Qexy.org</div>
