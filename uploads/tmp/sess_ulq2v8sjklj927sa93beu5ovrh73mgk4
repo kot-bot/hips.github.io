@@ -1,0 +1,1 @@
+notify_type|s:10:"alert-info";mcr_notify|b:1;notify_msg|s:39:"Необходима установка";start|b:1;f_host|s:9:"127.0.0.1";f_port|i:3306;f_base|s:0:"";f_user|s:4:"root";f_pass|s:0:"";f_backend|s:0:"";
