@@ -1,0 +1,32 @@
+<div class="form-block">
+<div style="padding:5px 0 5px; 0">
+
+<div class="btn-group" style="float:right;">
+	<?php if(!$cfgShop['install']){ ?>
+	<a href="<?=BASE_URL?>go/shop/extra" class="btn btn-mini"><i class="icon-wrench"></i> Дополнительные настройки</a>
+	<?php echo self::BtnHead(); }?>
+</div>
+<div style="display:none;">McrShop © Qexy.org</div>
+Web-Магазин<?if($cfgShop['install']){echo " (Установка)";}?>:</div>
+<div class="block-line"><?=$info?></div>
+
+<form action="<?=BASE_URL?>go/shop/settings" name="adminform" method="post">
+
+	<div class="input-prepend">
+		<span class="add-on" style="width:200px;">Таблица экономики <i class="icon-info-sign" title="По умолчанию iconomy"></i></span>
+		<input type="text" name="SMoney" class="span6" value="<?=$bd_names['iconomy']?>" required>
+	</div>
+
+	<div class="input-prepend">
+		<span class="add-on" style="width:200px;">Поле банка в экономике <i class="icon-info-sign" title="По умолчанию bank"></i></span>
+		<input type="text" name="SBank" class="span6" value="<?=$bd_money['bank']?>" required>
+	</div>
+	
+	<p><div style="float: right;">
+		<input class="btn" type="submit" value="Сохранить" />
+	</div></p>
+<!-- <?=self::buyid()?> -->
+</form>	
+	
+</div>
+<div style="text-align:right; background:#F5F5F5; border: 1px solid #E5E5E5;">McrShop v<?=S_VERSION?> Premium © Qexy.org</div>
